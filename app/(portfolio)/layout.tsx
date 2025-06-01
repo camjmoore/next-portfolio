@@ -1,6 +1,10 @@
+import Navigation from "./navigation";
+import Headshot from "./headshot";
+import Footer from "./footer";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import localFont from "next/font/local";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +14,31 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const quattro = localFont({
+  src: [
+    {
+      path: "../fonts/iAWriterQuattroS-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/iAWriterQuattroS-Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../fonts/iAWriterQuattroS-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/iAWriterQuattroS-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +54,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${quattro.className} antialiased flex h-full flex-col`}
       >
+        <div className="fixed inset-0 flex justify-center sm:px-8">
+          <div className="flex w-full max-w-7xl lg:px-8">
+            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+            </div>
+          </div>
+        </div>
+
+        <div className="h-20 max-w-full max-auto ">
+          <div className="flex items-center justify-center sm:justify-start md:justify-between h-full max-w-5xl mx-auto">
+            <Headshot/>
+            <Navigation/>
+            <Headshot/>
+          </div>
+        </div>
+
         {children}
+        <Footer/>
       </body>
     </html>
   );
