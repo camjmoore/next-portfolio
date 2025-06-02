@@ -59,14 +59,14 @@ export default function RootLayout({
       >
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
-            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+            <div className="w-full ring-1 bg-zinc-900 ring-zinc-300/20">
             </div>
           </div>
         </div>
 
         <div className="relative">
-          <div className="sticky backdrop-blur z-10 top-0 h-20 max-w-[75rem] mx-auto">
-            <div className="flex items-center justify-between sm:justify-start md:justify-between h-full max-w-5xl mx-auto">
+          <div className="sticky backdrop-blur z-50 top-0 h-20 sm:w-[90%] md:w-[90%] lg:w-[85%] max-w-[68rem] mx-auto">
+            <div className="flex items-center justify-between sm:justify-start md:justify-center h-full max-w-5xl mx-auto">
               <Headshot/>
               <Navigation/>
                 <div className="mx-auto min-w-32">
