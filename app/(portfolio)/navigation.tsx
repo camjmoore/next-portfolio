@@ -14,7 +14,7 @@ export default function Nav() {
 
   return (
     <div className="flex flex-1 items-center justify-center h-20 max-w-full mx-auto">
-      <nav className="flex backdrop-blur-sm rounded-full px-3 text-sm bg-zinc-800/90 bg-opacity-80 ring-1 ring-white/10 pointer-events-auto">
+      <nav className="flex backdrop-blur-sm rounded-full px-3 text-sm font-bold bg-zinc-800/90 bg-opacity-80 ring-1 ring-white/10 pointer-events-auto">
         {menu.map((link) => {
           const isActive = pathname.startsWith(link.href);
 

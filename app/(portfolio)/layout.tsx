@@ -1,6 +1,7 @@
 import Navigation from "./navigation";
 import Headshot from "./headshot";
 import Footer from "./footer";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
@@ -52,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="h-full" lang="en">
       <body
         className={`${quattro.className} antialiased flex h-full flex-col`}
       >
@@ -63,16 +64,23 @@ export default function RootLayout({
           </div>
         </div>
 
-        <div className="h-20 max-w-full max-auto ">
-          <div className="flex items-center justify-center sm:justify-start md:justify-between h-full max-w-5xl mx-auto">
-            <Headshot/>
-            <Navigation/>
-            <Headshot/>
+        <div className="relative">
+          <div className="sticky backdrop-blur z-10 top-0 h-20 max-w-[75rem] mx-auto">
+            <div className="flex items-center justify-between sm:justify-start md:justify-between h-full max-w-5xl mx-auto">
+              <Headshot/>
+              <Navigation/>
+                <div className="mx-auto min-w-32">
+                  <button className="group rounded-full bg-white/90 px-3 py-1.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
+                    <Image  className="" alt="bisected circle" src="/theme.svg" width={30} height={30}/>
+                  </button>
+                </div>
+            </div>
           </div>
+
+          {children}
+          <Footer/>
         </div>
 
-        {children}
-        <Footer/>
       </body>
     </html>
   );
