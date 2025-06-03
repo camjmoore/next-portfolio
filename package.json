@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "build:icons": "svgr --typescript --out-dir src/components/icons --icon -- public/*.svg",
+    "dev": "npm run build:icons && next dev --turbopack",
+    "build": "npm run build:icons && next build",
     "start": "next start",
     "lint": "next lint"
   },
