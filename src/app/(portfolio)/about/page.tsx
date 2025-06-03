@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Github from "@/public"
 
 export default function About () {
   return (
@@ -12,15 +11,15 @@ export default function About () {
       </div>
 
       <div className="lg:order-first lg:row-span-2">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Hi I'm Cameron and I can help your tech organization</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Hi I&apos;m Cameron and I can help your tech organization</h1>
         <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-          I'm an American full-stack developer based in Bolivia with a nice setup for remote working. I am open to collaborating in both Spanish and English.
+          I&apos;m an American full-stack developer based in Bolivia with a nice setup for remote working. I am open to collaborating in both Spanish and English.
 
-          I’m a independent software consultant with more than 10 years of experience in the software industry. I’ve been a senior developer consultant, a tech lead, an engineering manager, and head of engineering.
+          I&apos;m a independent software consultant with more than 10 years of experience in the software industry. I&apos;ve been a senior developer consultant, a tech lead, an engineering manager, and head of engineering.
 
-          I have been working in industries like fintech, e-commerce, developer tools, and more. I’ve been working with startups, scaleups, and big companies.
+          I have been working in industries like fintech, e-commerce, developer tools, and more. I&apos;ve been working with startups, scaleups, and big companies.
 
-          In order to adapt to all those different environments, I’ve learned different roles and disciplines to adapt myself to the context at hand
+          In order to adapt to all those different environments, I&apos;ve learned different roles and disciplines to adapt myself to the context at hand
           {/*Sanity content*/}
         </div>
       </div>

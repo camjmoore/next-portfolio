@@ -2,9 +2,7 @@ import { getPost } from "@/sanity/lib/resolvers";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
-type Props = { params: { post: string } };
-
-export default async function Post({ params }: Props) {
+export default async function Post({ params }: { params: { post: string } }) {
   const slug = params.post;
 
   const post = await getPost(slug);
