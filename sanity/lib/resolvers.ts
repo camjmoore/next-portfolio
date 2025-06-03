@@ -1,5 +1,5 @@
-import { Post } from "../../types";
-import { Project } from "../../types";
+import { Post } from "@/types/Post";
+import { Project } from "@/types/Project";
 import { client } from "./client";
 import {
   projectQuery, 
