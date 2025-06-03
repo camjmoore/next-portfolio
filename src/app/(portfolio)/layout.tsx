@@ -1,6 +1,4 @@
-import Navigation from "@/components/navigation";
-import Headshot from "@/components/headshot";
-import Footer from "@/components/footer";
+import { Navigation, Headshot, Footer } from "@/components";
 import Image from "next/image";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
