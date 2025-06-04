@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build:icons": "svgr --typescript --out-dir src/components/icons --icon -- public/*.svg",
-    "dev": "npm run build:icons && next dev --turbopack",
+    "dev": "next dev --turbopack",
     "build": "npm run build:icons && next build",
     "start": "next start",
     "lint": "next lint"
@@ -18,7 +18,7 @@
     "next-sanity": "^9.12.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sanity": "^3.90.0",
+    "sanity": "^3.91.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
