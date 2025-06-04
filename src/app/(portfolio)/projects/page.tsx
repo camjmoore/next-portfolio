@@ -1,7 +1,7 @@
 import { getProjects } from "@/sanity/lib/resolvers";
 import Image from "next/image";
-import Link from "next/link";
-
+import { PortableText } from "@portabletext/react";
+import { LinkIcon } from '@heroicons/react/24/solid'
 export default async function Projects() {
 
   const projects = await getProjects();
@@ -23,26 +23,24 @@ export default async function Projects() {
               key={project._id}
             >
 
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image src={project.image} alt={project.name} width={25} height={25}/>
+              <div className="relative z-10 flex h-12 w-12 overflow-hidden items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image src={project.image} alt={project.name} width={50} height={50}/>
               </div>
 
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl">
-                  {/*Project URL*/}
-                  <Link href={`/projects/${project.slug}`}>
+                <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
+                  <a href={project.url}>
                     <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                     <span className="relative z-10">{project.name}</span>
-                  </Link>
-                </div>
+                  </a>
               </h2>
 
               <p className="relative z-10 my-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {/*Project description*/}
+                <PortableText value={project.content} />
               </p>
 
               <p className="relative z-10 mt-6 mt-auto flex text-sm font-bold text-zinc-400 transition group-hover:text-orange-500 dark:text-zinc-200">
-                {/*svg link icon classsName h-6 w-6 flex-none*/}
+                <LinkIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2">github.com/camjmoore/alien-anthology</span>
               </p>
 
