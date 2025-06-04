@@ -1,5 +1,6 @@
+import Link from "next/link"
 import { getPost } from "@/sanity/lib/resolvers";
-import Image from "next/image";
+import { LeftArrow } from "@/components";
 import { PortableText } from "@portabletext/react";
 
 export default async function Post({ params }: { params: { post: string } }) {
@@ -8,17 +9,28 @@ export default async function Post({ params }: { params: { post: string } }) {
   const post = await getPost(slug);
 
   return (
-    <div className="xl:relative">
-      <div className="mx-auto max-w-2xl">
-        <button className="group mb-8 flex items-center justify-center rounded-full lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0 shadow-lg ring-1 backdrop-blur transition bg-zinc-800/90 ring-white/10 hover:ring-white/20">
-          <Image src="/left-arrow.svg" alt="left arrow" width={20} height={20}/>
-        </button>
-      </div>
-      <header>
-        <h1>{post.name}</h1>
-      </header>
-      <div>
-        <PortableText value={post.content} />
+    <div className="mx-auto max-w-2xl lg:max-w-5xl">
+      <div className="xl:relative">
+        <div className="mx-auto max-w-2xl">
+          <Link href="/posts">
+            <button className="group mb-8 h-10 w-10 flex items-center justify-center rounded-full lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0 shadow-lg ring-1 backdrop-blur transition bg-zinc-800/90 ring-white/10 hover:ring-white/20 cursor-pointer">
+              <LeftArrow />
+            </button>
+          </Link>
+
+          <article>
+            <header className="flex flex-col">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">{post.name}</h1>
+              <time className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
+                <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+                <span className="ml-3">{post._createdAt.toString().substring(5, 10)}</span>
+              </time>
+            </header>
+            <div className="mt-8 md:prose-lg xl:prose-xl prose">
+              <PortableText value={post.content} />
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   );
