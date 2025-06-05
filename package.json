@@ -7,7 +7,8 @@
     "dev": "next dev --turbopack",
     "build": "npm run build:icons && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen": "cd sanity && sanity schema extract && sanity typegen generate"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
