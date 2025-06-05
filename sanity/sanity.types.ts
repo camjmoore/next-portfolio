@@ -64,6 +64,7 @@ export type Project = {
     _type: "image";
   };
   url?: string;
+  status?: string;
   content?: Array<{
     children?: Array<{
       marks?: Array<string>;

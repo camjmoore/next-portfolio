@@ -8,6 +8,7 @@ export const projectQuery = groq`
     "slug": slug.current,
     "image": image.asset->url,
     url,
+    status,
     content
   }
 `;
@@ -20,6 +21,7 @@ export const projectBySlugQuery = groq`
     "slug": slug.current,
     "image": image.asset->url,
     url,
+    status,
     content
   }
 `;
