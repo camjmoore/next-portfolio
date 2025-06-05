@@ -10,7 +10,7 @@ export default async function Projects() {
     <div className="mx-auto max-w-2xl lg:max-w-5xl">
 
       <header className="max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Things I&apos;ve Proudly built</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Things I&apos;ve Proudly Built</h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400"> I enjoy working with frameworks and learning new strategies, but most of all, learning from awesome people and communities. These are the projects that I’m most proud of.</p>
       </header>
 
@@ -22,26 +22,36 @@ export default async function Projects() {
               className="group relative flex flex-col items-start"
               key={project._id}
             >
+              <div className="min-w-3/4 flex items-center">
+                <div className="z-10 flex h-12 w-12 overflow-hidden items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                  <Image src={project.image} alt={project.name} width={50} height={50}/>
+                </div>
 
-              <div className="relative z-10 flex h-12 w-12 overflow-hidden items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image src={project.image} alt={project.name} width={50} height={50}/>
+
+                <span className={`ml-5 px-3 py-1 rounded-full text-center text-sm border ${
+project.status == 'live' ? 'bg-teal-800/20 text-teal-400 border-teal-400/30' :
+project.status == 'in progress' ? 'bg-amber-700/20 text-amber-700 border-amber-700/30' :
+'bg-sky-800/20 text-sky-500 border-sky-500/30'
+}`}>
+                  {project.status}
+                </span>
               </div>
 
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-                  <a href={project.url}>
+                  <a href={project.url} target="_blank">
                     <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                     <span className="relative z-10">{project.name}</span>
                   </a>
               </h2>
 
-              <p className="relative z-10 my-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <div className="relative z-10 my-2 text-sm text-zinc-600 dark:text-zinc-400">
                 <PortableText value={project.content} />
-              </p>
+              </div>
 
-              <p className="relative z-10 mt-6 mt-auto flex text-sm font-bold text-zinc-400 transition group-hover:text-orange-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">github.com/camjmoore/alien-anthology</span>
+              <p className="relative z-10 mt-6 flex text-xs font-bold text-zinc-400 transition group-hover:text-orange-500 dark:text-zinc-200">
+                <LinkIcon className="h-4 w-4 flex-none" />
+                <small className="ml-1">{project.url?.toString().substring(8)}</small>
               </p>
 
             </li>
