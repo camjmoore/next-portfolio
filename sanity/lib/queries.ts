@@ -47,3 +47,28 @@ export const postBySlugQuery = groq`
     tags
   }
 `;
+
+export const rudimentQuery = groq`
+  *[_type == "rudiment"] {
+    _id,
+    _createdAt,
+    name,
+    "slug": slug.current,
+    content,
+    category,
+    tags
+}
+`
+
+
+export const rudimentBySlugQuery = groq`
+  *[_type == "rudiment" && slug.curreent == $slug][0]{
+    _id,
+    _createdAt,
+    name,
+    "slug": slug.current,
+    content,
+    category,
+    tags
+}
+`
