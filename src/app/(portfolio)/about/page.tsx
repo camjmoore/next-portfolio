@@ -27,23 +27,32 @@ export default function About () {
       <div className="lg:pl-20">
 
         <ul>
-          <li className="flex items-center mt-4 -block mr-2 lg:flex">
-            <div className="w-12 h-12 bg-teal-400/20 border border-teal-400/30 rounded-full px-2 flex items-center justify-center group-hover:border-teal-400 transition-colors">
-              <Image src="/Github.svg" alt="github logo" width={50} height={50}/>
-            </div>
-            <span className="ml-4 hidden lg:block">Follow me on Github</span>
+
+          <li>
+            <a className="flex items-center bg-zinc-900 rounded-lg mt-4 mr-2 -block lg:flex z-0 hover:scale-105 bg-opacity-0 transition hover:scale-100 hover:opacity-100 hover:bg-zinc-800/50" href="https://github.com/camjmoore" target="_blank">
+              <div className="w-12 h-12 bg-teal-400/20 border border-teal-400/30 rounded-full px-2 flex items-center justify-center">
+                <Image src="/Github.svg" alt="github logo" width={50} height={50}/>
+              </div>
+              <span className="ml-4 hidden lg:block ">Follow me on Github</span>
+            </a>
           </li>
-          <li className="flex items-center mt-4 mr-2 lg:flex">
-            <div className="w-12 h-12 bg-sky-800/20 border border-sky-800/30 rounded-full px-2 flex items-center justify-center group-hover:border-sky-800 transition-colors">
-              <Image src="/Linkedin.svg" alt="linkedin logo" width={50} height={50}/>
-            </div>
-            <span className="ml-4 hidden lg:block">Connect with me on Linkedin</span>
+
+          <li>
+            <a className="flex items-center bg-zinc-900 rounded-lg mt-4 mr-2 -block lg:flex z-0 hover:scale-105 bg-opacity-0 transition hover:scale-100 hover:opacity-100 hover:bg-zinc-800/50" href="https://www.linkedin.com/in/cameronjmoore/" target="_blank">
+              <div className="w-12 h-12 bg-sky-800/20 border border-sky-800/30 rounded-full px-2 flex items-center justify-center group-hover:border-sky-800 transition-colors">
+                <Image src="/Linkedin.svg" alt="linkedin logo" width={50} height={50}/>
+              </div>
+              <span className="ml-4 hidden lg:block">Connect with me on Linkedin</span>
+            </a>
           </li>
-          <li className="flex items-center mt-4 mr-2 lg:flex">
-            <div className="w-12 h-12 bg-amber-700/20 border border-amber-700/30 rounded-full px-2 flex items-center justify-center group-hover:border-amber-700 transition-colors">
-              <Image src="/Email.svg" alt="Email at-symbol logo" width={40} height={40}/>
-            </div>
-            <span className="ml-4 hidden lg:block">Contact me</span>
+
+          <li>
+           <a className="flex items-center bg-zinc-900 rounded-lg mt-4 mr-2 -block lg:flex z-0 hover:scale-105 bg-opacity-0 transition hover:scale-100 hover:opacity-100 hover:bg-zinc-800/50" href="https://www.linkedin.com/in/cameronjmoore/" target="_blank">
+              <div className="w-12 h-12 bg-amber-700/20 border border-amber-700/30 rounded-full px-2 flex items-center justify-center group-hover:border-amber-700 transition-colors">
+                <Image src="/Email.svg" alt="Email at-symbol logo" width={40} height={40}/>
+              </div>
+              <span className="ml-4 hidden lg:block">Contact me</span>
+            </a>
           </li>
         </ul>
       </div>
