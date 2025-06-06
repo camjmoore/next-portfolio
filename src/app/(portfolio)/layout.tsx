@@ -44,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${quattro.className} antialiased flex h-full flex-col`}
       >
+        {/*gray backdrop*/}
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
             <div className="w-full ring-1 bg-zinc-900 ring-zinc-300/20">
@@ -51,6 +52,7 @@ export default function RootLayout({
           </div>
         </div>
 
+        {/*header backdrop*/}
         <div className="relative">
           <div className="sticky backdrop-blur z-50 top-0 h-20 sm:w-[90%] md:w-[90%] lg:w-[85%] max-w-[68rem] mx-auto">
             <div className="flex items-center justify-between sm:justify-start md:justify-center h-full max-w-5xl mx-auto">

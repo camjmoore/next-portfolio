@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { getProjects } from "@/sanity/lib/resolvers";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
@@ -7,7 +8,7 @@ export default async function Projects() {
   const projects = await getProjects();
 
   return (
-    <div className="mx-auto max-w-2xl lg:max-w-5xl">
+    <Layout>
 
       <header className="max-w-2xl">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">Things I&apos;ve Proudly Built</h1>
@@ -59,6 +60,6 @@ project.status == 'in progress' ? 'bg-amber-700/20 text-amber-700 border-amber-7
         </ul>
       </div>
 
-    </div>
+    </Layout>
   )
 }
