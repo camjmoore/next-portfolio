@@ -20,7 +20,7 @@ export default async function Projects() {
           {projects.map((project) => (
 
             <li
-              className="group relative flex flex-col items-start rounded-lg z-10 px-3 py-3 bg-zinc-900 bg-opacity-0 transition hover:scale-105 hover:bg-zinc-800/50"
+              className="group relative flex flex-col items-start rounded-lg z-10 px-3 py-3 bg-white dark:bg-zinc-900 dark:bg-zinc-800/50 transition hover:scale-105 hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
               key={project._id}
             >
               <div className="min-w-3/4 flex items-center">

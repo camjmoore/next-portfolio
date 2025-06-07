@@ -37,14 +37,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+    children: React.ReactNode;
+  }>) {
   return (
-      <html className="h-full" lang="en" suppressHydrationWarning>
-        <body
-          className={`${quattro.className} antialiased flex h-full flex-col`}
-        >
-              <NextThemeProvider>
+    <html className="h-full" lang="en" suppressHydrationWarning>
+      <body
+        className={`${quattro.className} antialiased flex h-full flex-col`}
+      >
+        <NextThemeProvider>
           {/*gray backdrop*/}
           <div className="fixed inset-0 flex justify-center sm:px-8">
             <div className="flex w-full max-w-7xl lg:px-8">
@@ -63,12 +63,12 @@ export default function RootLayout({
               </div>
             </div>
 
-                {children}
+            {children}
             <Footer/>
           </div>
 
-              </NextThemeProvider>
-        </body>
-      </html>
+        </NextThemeProvider>
+      </body>
+    </html>
   );
 }
