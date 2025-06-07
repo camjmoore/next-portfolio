@@ -26,6 +26,6 @@ export async function getPost(slug: string): Promise<Post> {
   return client.fetch(postBySlugQuery, { slug });
 }
 
-export async function getRudiments(): Promise<Rudiment> {
+export async function getRudiments(): Promise<Rudiment[]> {
   return client.fetch(rudimentQuery);
 }

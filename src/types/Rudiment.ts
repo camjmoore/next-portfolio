@@ -9,3 +9,5 @@ export type Rudiment = {
   category: string;
   tags: string[];
 };
+
+export type RudimentArray = Rudiment[]

@@ -3,10 +3,11 @@ import { getPost } from "@/sanity/lib/resolvers";
 import { LeftArrow, Layout } from "@/components";
 import { PortableText } from "@portabletext/react";
 
-export default async function Post({ params }: { params: { post: string } }) {
-  const slug = params.post;
+type Params = Promise<{ post: string }>
 
-  const post = await getPost(slug);
+export default async function Post({ params }: { params: Params }) {
+  const { post } = await params
+  const selectedPost = await getPost(post);
 
   return (
     <Layout>
@@ -22,14 +23,14 @@ export default async function Post({ params }: { params: { post: string } }) {
 
             <article>
               <header className="flex flex-col">
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">{post.name}</h1>
+                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">{selectedPost.name}</h1>
                 <time className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                  <span className="ml-3">{post._createdAt.toString().substring(5, 10)}</span>
+                  <span className="ml-3">{selectedPost._createdAt.toString().substring(5, 10)}</span>
                 </time>
               </header>
               <div className="mt-8 md:prose-lg xl:prose-xl prose">
-                <PortableText value={post.content} />
+                <PortableText value={selectedPost.content} />
               </div>
             </article>
           </div>

@@ -12,7 +12,7 @@ export default async function Rudiments(){
 
   const rudiments = await getRudiments();
 
-  const groupByCategory = (rudiments: Rudiment): RudimentGroup[] => {
+  const groupByCategory = (rudiments: Rudiment[]): RudimentGroup[] => {
     return Object.values(
       rudiments.reduce((acc, rudiment: Rudiment) => {
         if(!acc[rudiment.category]) {

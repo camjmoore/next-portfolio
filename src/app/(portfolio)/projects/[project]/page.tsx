@@ -1,19 +1,19 @@
 import { getProject } from "@/sanity/lib/resolvers";
 import { PortableText } from "@portabletext/react";
 
-type Props = { params: { project: string } };
+type Params = Promise<{ project: string }>
 
-export default async function Project({ params }: Props) {
-  const slug = params.project;
-  const project = await getProject(slug);
+export default async function Project({ params }: { params: Params }) {
+  const { project } = await params
+  const selectedProject = await getProject(project);
 
   return (
     <div>
       <header>
-        <h1>{project.name}</h1>
+        <h1>{selectedProject.name}</h1>
       </header>
       <div>
-        <PortableText value={project.content} />
+        <PortableText value={selectedProject.content} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@
 
 import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
-import { structureTool } from 'sanity/structure'
+import { structureTool, StructureToolOptions } from 'sanity/structure'
 //import {defineDocumentType} from '@/sanity/typed-document-types'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
@@ -20,7 +20,7 @@ export default defineConfig({
   dataset,
   schema: schemaTypes,
   plugins: [
-    structureTool(structure),
+    structureTool(structure as StructureToolOptions),
     visionTool({defaultApiVersion: apiVersion}),
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
