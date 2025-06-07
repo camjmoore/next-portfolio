@@ -1,11 +1,13 @@
 import { Post } from "@/types/Post";
 import { Project } from "@/types/Project";
+import { Rudiment } from "@/types/Rudiment";
 import { client } from "./client";
 import {
   projectQuery, 
   projectBySlugQuery, 
   postQuery, 
-  postBySlugQuery
+  postBySlugQuery,
+  rudimentQuery
 } from "./queries";
 
 export async function getProjects(): Promise<Project[]> {
@@ -22,4 +24,8 @@ export async function getPosts(): Promise<Post[]> {
 
 export async function getPost(slug: string): Promise<Post> {
   return client.fetch(postBySlugQuery, { slug });
+}
+
+export async function getRudiments(): Promise<Rudiment> {
+  return client.fetch(rudimentQuery);
 }
