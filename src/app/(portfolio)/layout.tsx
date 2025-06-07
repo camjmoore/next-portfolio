@@ -1,8 +1,7 @@
-import { Navigation, Headshot, Footer } from "@/components";
+import { Navigation, Headshot, Footer, ThemeToggle } from "@/components";
 import type { Metadata } from "next";
-import Image from "next/image";
 import localFont from "next/font/local";
-import { ThemeProvider } from "next-themes";
+import { NextThemeProvider } from "@/providers/NextThemeProvider";
 import "../globals.css";
 
 const quattro = localFont({
@@ -41,15 +40,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider attribute="class">
-      <html className="h-full" lang="en">
+      <html className="h-full" lang="en" suppressHydrationWarning>
         <body
           className={`${quattro.className} antialiased flex h-full flex-col`}
         >
+              <NextThemeProvider>
           {/*gray backdrop*/}
           <div className="fixed inset-0 flex justify-center sm:px-8">
             <div className="flex w-full max-w-7xl lg:px-8">
-              <div className="w-full ring-1 bg-zinc-900 ring-zinc-300/20">
+              <div className="w-full ring-1 bg-white dark:bg-zinc-900 ring-zinc-300/20">
               </div>
             </div>
           </div>
@@ -60,20 +59,16 @@ export default function RootLayout({
               <div className="flex items-center justify-between sm:justify-start md:justify-center h-full max-w-5xl mx-auto">
                 <Headshot/>
                 <Navigation/>
-                <div className="mx-auto min-w-32">
-                  <button className="group rounded-full bg-white/90 px-3 py-1.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
-                    <Image  className="" alt="bisected circle" src="/theme.svg" width={30} height={30}/>
-                  </button>
-                </div>
+                <ThemeToggle/>
               </div>
             </div>
 
-            {children}
+                {children}
             <Footer/>
           </div>
 
+              </NextThemeProvider>
         </body>
       </html>
-    </ThemeProvider>
   );
 }
