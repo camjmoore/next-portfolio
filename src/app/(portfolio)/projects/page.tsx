@@ -20,7 +20,7 @@ export default async function Projects() {
           {projects.map((project) => (
 
             <li
-              className="group relative flex flex-col items-start"
+              className="group relative flex flex-col items-start rounded-lg z-10 px-3 py-3 bg-zinc-900 bg-opacity-0 transition hover:scale-105 hover:bg-zinc-800/50"
               key={project._id}
             >
               <div className="min-w-3/4 flex items-center">
@@ -39,9 +39,7 @@ project.status == 'in progress' ? 'bg-amber-700/20 text-amber-700 border-amber-7
               </div>
 
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
                   <a href={project.url} target="_blank">
-                    <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                     <span className="relative z-10">{project.name}</span>
                   </a>
               </h2>
