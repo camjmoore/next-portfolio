@@ -1,7 +1,8 @@
 import { Navigation, Headshot, Footer } from "@/components";
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
 import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 import "../globals.css";
 
 const quattro = localFont({
@@ -40,37 +41,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="h-full" lang="en">
-      <body
-        className={`${quattro.className} antialiased flex h-full flex-col`}
-      >
-        {/*gray backdrop*/}
-        <div className="fixed inset-0 flex justify-center sm:px-8">
-          <div className="flex w-full max-w-7xl lg:px-8">
-            <div className="w-full ring-1 bg-zinc-900 ring-zinc-300/20">
+    <ThemeProvider attribute="class">
+      <html className="h-full" lang="en">
+        <body
+          className={`${quattro.className} antialiased flex h-full flex-col`}
+        >
+          {/*gray backdrop*/}
+          <div className="fixed inset-0 flex justify-center sm:px-8">
+            <div className="flex w-full max-w-7xl lg:px-8">
+              <div className="w-full ring-1 bg-zinc-900 ring-zinc-300/20">
+              </div>
             </div>
           </div>
-        </div>
 
-        {/*header backdrop*/}
-        <div className="relative">
-          <div className="sticky backdrop-blur z-50 top-0 h-20 sm:w-[90%] md:w-[90%] lg:w-[85%] max-w-[68rem] mx-auto">
-            <div className="flex items-center justify-between sm:justify-start md:justify-center h-full max-w-5xl mx-auto">
-              <Headshot/>
-              <Navigation/>
+          {/*header backdrop*/}
+          <div className="relative">
+            <div className="sticky backdrop-blur z-50 top-0 h-20 sm:w-[90%] md:w-[90%] lg:w-[85%] max-w-[68rem] mx-auto">
+              <div className="flex items-center justify-between sm:justify-start md:justify-center h-full max-w-5xl mx-auto">
+                <Headshot/>
+                <Navigation/>
                 <div className="mx-auto min-w-32">
                   <button className="group rounded-full bg-white/90 px-3 py-1.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
                     <Image  className="" alt="bisected circle" src="/theme.svg" width={30} height={30}/>
                   </button>
                 </div>
+              </div>
             </div>
+
+            {children}
+            <Footer/>
           </div>
 
-          {children}
-          <Footer/>
-        </div>
-
-      </body>
-    </html>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
