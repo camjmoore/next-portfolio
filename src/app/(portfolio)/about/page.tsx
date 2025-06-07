@@ -47,7 +47,7 @@ export default function About () {
           </li>
 
           <li>
-           <a className="flex items-center bg-white dark:bg-zinc-900 rounded-lg mt-4 mr-2 -block lg:flex z-0 hover:scale-105 transition hover:text-orange-500  hover:scale-100 hover:bg-zinc-50 dark:hover:bg-zinc-800/50" href="https://www.linkedin.com/in/cameronjmoore/" target="_blank">
+           <a className="flex items-center bg-white dark:bg-zinc-900 rounded-lg mt-4 mr-2 -block lg:flex z-0 hover:scale-105 transition hover:text-orange-500  hover:scale-100 hover:bg-zinc-50 dark:hover:bg-zinc-800/50" href="mailto:cjmooredev@gmail.com" target="_blank">
               <div className="w-12 h-12 bg-amber-700/20 border border-amber-700/30 rounded-full px-2 flex items-center justify-center group-hover:border-amber-700 transition-colors">
                 <Image src="/Email.svg" alt="Email at-symbol logo" width={40} height={40}/>
               </div>
