@@ -16,7 +16,7 @@ export default async function Post({ params }: { params: Params }) {
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
             <Link href="/posts">
-              <button className="group mb-8 h-10 w-10 flex items-center justify-center rounded-full lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0 shadow-lg ring-1 backdrop-blur transition bg-zinc-800/90 ring-white/10 hover:ring-white/20 cursor-pointer">
+              <button className="group mb-8 h-10 w-10 flex items-center justify-center rounded-full lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 cursor-pointer">
                 <LeftArrow />
               </button>
             </Link>

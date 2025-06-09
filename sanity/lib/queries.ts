@@ -57,12 +57,12 @@ export const rudimentQuery = groq`
     content,
     category,
     tags
-}
-`
+  }
+`;
 
 
 export const rudimentBySlugQuery = groq`
-  *[_type == "rudiment" && slug.curreent == $slug][0]{
+  *[_type == "rudiment" && slug.current == $slug][0]{
     _id,
     _createdAt,
     name,
@@ -70,5 +70,15 @@ export const rudimentBySlugQuery = groq`
     content,
     category,
     tags
-}
-`
+  }
+`;
+
+export const aboutQuery = groq`
+  *[_type == "about"] {
+    _id,
+    _createdAt,
+    name,
+    hello,
+    content
+  }
+`;

@@ -29,13 +29,13 @@ export default async function Rudiments(){
 
   return (
     <Layout>
-      <span className="mx-auto px-3 rounded-full text-center text-sm border bg-amber-700/20 text-amber-700 border-amber-700/30">under construction</span>
       <header className="max-w-2xl">
         <h1 className="flex text-4xl font-bold tracking-tight text-zinc-800 dark:text-white sm:text-5xl"> 
           Rudiments
 
         </h1>
-        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">Fundamental concepts, best practices and &apos;etudes&apos; in web-development that have formed my foundation</p>
+        <span className="mx-auto px-3 rounded-full text-center text-sm border bg-amber-700/20 text-amber-700 border-amber-700/30">under construction</span>
+        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">Fundamental concepts, best practices and &apos;etudes&apos;</p>
       </header>
 
       <div className="space-y-8 mt-16">

@@ -40,6 +40,7 @@ project.status == 'in progress' ? 'bg-amber-700/20 text-amber-700 border-amber-7
 
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                   <a href={project.url} target="_blank">
+                    <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                     <span className="relative z-10">{project.name}</span>
                   </a>
               </h2>
