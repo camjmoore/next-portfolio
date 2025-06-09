@@ -1,5 +1,5 @@
 "use client";
-import * as motion from "motion/react-client"
+import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
 export default function AboutLayout({

@@ -2,7 +2,7 @@ import { Navigation, MobileNav, Headshot, Footer, ThemeToggle } from "@/componen
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextThemeProvider } from "@/providers/NextThemeProvider";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import "../globals.css";
 
 const quattro = localFont({
