@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 
 export default function AboutLayout({
@@ -18,13 +18,14 @@ export default function AboutLayout({
   }
 
   return (
+    <AnimatePresence>
     <motion.div
       key={pathname}
       initial="hidden"
       animate="enter"
       exit="exit"
       variants={variants}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
       className="min-h-3/4 sm:px-8 mt-16 sm:mt-32">
       <div className="mx-auto max-w-7xl lg:px-8">
         <div className="relative px-4 sm:px-8 lg:px-12">
@@ -34,5 +35,6 @@ export default function AboutLayout({
         </div>
       </div>
     </motion.div>
+    </AnimatePresence>
   );
 }
