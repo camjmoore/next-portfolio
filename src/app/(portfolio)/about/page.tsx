@@ -5,7 +5,7 @@ import { getAbout } from "@/sanity/lib/resolvers";
 
 export default async function About() {
 
-  const [ about, ...rest ] = await getAbout();
+  const about = (await getAbout())[0];
 
   return (
     <Layout>
